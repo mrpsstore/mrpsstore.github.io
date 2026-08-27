@@ -1,8 +1,8 @@
 /* =========================================================
-   SHERIF FIX / ENG. SHERIF AREF - LARGER & CLEARER FONT THEME
+   MR PS STORE - ULTRA LARGE & CENTERED FONT THEME
    ========================================================= */
 
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800;900&family=Rajdhani:wght@700;800&family=Tajawal:wght@700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Rajdhani:wght@700;800&family=Tajawal:wght@700;900&display=swap');
 
 * {
     margin: 0;
@@ -18,9 +18,9 @@
     --neon-gold: #ffbe0b;
     --neon-fire: #ff5e36;
     --neon-ps5: #7b2cbf;
-    --glass-bg: rgba(10, 20, 38, 0.5);
+    --glass-bg: rgba(10, 20, 38, 0.55);
     --glass-border: rgba(0, 210, 255, 0.4);
-    --text-glow: 0 0 10px rgba(0, 210, 255, 0.8);
+    --text-glow: 0 0 12px rgba(0, 210, 255, 0.9);
 }
 
 html, body {
@@ -46,67 +46,69 @@ html, body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 8px 20px;
-    margin: 10px auto 0;
-    width: 90%;
-    max-width: 1050px;
-    height: 52px;
-    background: rgba(8, 16, 32, 0.65);
+    padding: 10px 22px;
+    margin: 12px auto 0;
+    width: 92%;
+    max-width: 1100px;
+    height: 58px;
+    background: rgba(8, 16, 32, 0.7);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
-    border-radius: 14px;
-    border: 1.5px solid var(--neon-blue);
-    box-shadow: 0 0 15px rgba(0, 210, 255, 0.3);
+    border-radius: 16px;
+    border: 2px solid var(--neon-blue);
+    box-shadow: 0 0 20px rgba(0, 210, 255, 0.4);
     z-index: 10;
 }
 
 .brand-badge {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
     flex-shrink: 0;
 }
 
 .logo-mini {
-    width: 35px;
-    height: 35px;
-    border-radius: 8px;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
     object-fit: cover;
-    border: 1.5px solid var(--neon-blue);
+    border: 2px solid var(--neon-blue);
 }
 
+/* تكبير اسم العلامة التجارية في الشريط العلوي */
 .brand-name {
     font-family: 'Orbitron', sans-serif;
-    font-size: 15px;
+    font-size: 18px;
     font-weight: 900;
-    letter-spacing: 1.5px;
+    letter-spacing: 2px;
     color: #ffffff;
     text-shadow: var(--text-glow);
     white-space: nowrap;
 }
 
+/* تكبير عنوان الرسائل المتحركة فوق */
 #msgs {
     font-family: 'Orbitron', 'Tajawal', sans-serif;
-    font-size: 16px;
+    font-size: 19px;
     font-weight: 900;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
     color: var(--neon-blue);
-    text-shadow: 0 0 10px rgba(0, 210, 255, 0.8);
+    text-shadow: 0 0 12px rgba(0, 210, 255, 0.9);
     text-align: center;
     flex-grow: 1;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    padding: 0 10px;
+    padding: 0 12px;
 }
 
 .status-indicator {
     display: flex;
     align-items: center;
-    gap: 6px;
-    font-size: 13px;
-    font-weight: 800;
-    letter-spacing: 1px;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
     color: var(--neon-cyan);
     text-transform: uppercase;
     white-space: nowrap;
@@ -114,17 +116,17 @@ html, body {
 }
 
 .status-dot {
-    width: 8px;
-    height: 8px;
+    width: 9px;
+    height: 9px;
     background: var(--neon-cyan);
     border-radius: 50%;
-    box-shadow: 0 0 10px var(--neon-cyan);
+    box-shadow: 0 0 12px var(--neon-cyan);
     animation: pulse 1.5s infinite;
 }
 
 @keyframes pulse {
     0%, 100% { opacity: 1; transform: scale(1); }
-    50% { opacity: 0.3; transform: scale(1.25); }
+    50% { opacity: 0.3; transform: scale(1.3); }
 }
 
 /* =========================================================
@@ -132,65 +134,65 @@ html, body {
    ========================================================= */
 
 .glass-container {
-    width: 88%;
-    max-width: 840px;
-    margin: 8px auto;
-    padding: 16px 20px;
+    width: 90%;
+    max-width: 880px;
+    margin: 10px auto;
+    padding: 18px 24px;
     background: var(--glass-bg);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
-    border-radius: 18px;
-    border: 1.5px solid var(--glass-border);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), inset 0 0 15px rgba(0, 210, 255, 0.15);
+    border-radius: 20px;
+    border: 2px solid var(--glass-border);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.7), inset 0 0 20px rgba(0, 210, 255, 0.2);
     text-align: center;
     z-index: 5;
 }
 
 .logo-center {
-    margin-bottom: 8px;
+    margin-bottom: 10px;
 }
 
 .logo-hero {
-    width: 60px;
-    height: 60px;
-    border-radius: 12px;
+    width: 70px;
+    height: 70px;
+    border-radius: 14px;
     object-fit: cover;
-    border: 1.5px solid var(--neon-blue);
-    box-shadow: 0 0 15px rgba(0, 210, 255, 0.5);
-    margin-bottom: 4px;
+    border: 2px solid var(--neon-blue);
+    box-shadow: 0 0 20px rgba(0, 210, 255, 0.6);
+    margin-bottom: 6px;
 }
 
 .hero-slogan {
     font-family: 'Orbitron', sans-serif;
-    font-size: 13.5px;
+    font-size: 15px;
     font-weight: 900;
-    letter-spacing: 3px;
+    letter-spacing: 4px;
     color: var(--neon-blue);
     text-shadow: var(--text-glow);
 }
 
 /* =========================================================
-   FEATURED LAUNCH CARDS (أرياح وأكبر خطاً)
+   FEATURED LAUNCH CARDS (كبيرة ومريحة للعين)
    ========================================================= */
 
 .featured-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-    margin: 14px 0;
+    gap: 14px;
+    margin: 16px 0;
 }
 
 .console-card {
     display: flex;
     align-items: center;
-    gap: 14px;
-    padding: 12px 16px;
-    background: rgba(14, 28, 54, 0.7);
+    gap: 16px;
+    padding: 15px 18px;
+    background: rgba(14, 28, 54, 0.75);
     backdrop-filter: blur(6px);
     -webkit-backdrop-filter: blur(6px);
-    border-radius: 14px;
-    border: 1.5px solid var(--glass-border);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    border-radius: 16px;
+    border: 2px solid var(--glass-border);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
     text-decoration: none;
     cursor: pointer;
     position: relative;
@@ -198,16 +200,16 @@ html, body {
 }
 
 .console-card:hover {
-    background: rgba(20, 42, 80, 0.9);
+    background: rgba(20, 42, 80, 0.95);
 }
 
-.card-gold:hover { border-color: var(--neon-gold); box-shadow: 0 0 18px rgba(255, 190, 11, 0.6); }
-.card-cyan:hover { border-color: var(--neon-cyan); box-shadow: 0 0 18px rgba(0, 255, 204, 0.6); }
-.card-fire:hover { border-color: var(--neon-fire); box-shadow: 0 0 18px rgba(255, 94, 54, 0.6); }
-.card-ps5:hover  { border-color: var(--neon-ps5);  box-shadow: 0 0 18px rgba(123, 44, 191, 0.6); }
+.card-gold:hover { border-color: var(--neon-gold); box-shadow: 0 0 22px rgba(255, 190, 11, 0.7); }
+.card-cyan:hover { border-color: var(--neon-cyan); box-shadow: 0 0 22px rgba(0, 255, 204, 0.7); }
+.card-fire:hover { border-color: var(--neon-fire); box-shadow: 0 0 22px rgba(255, 94, 54, 0.7); }
+.card-ps5:hover  { border-color: var(--neon-ps5);  box-shadow: 0 0 22px rgba(123, 44, 191, 0.7); }
 
 .card-icon {
-    font-size: 28px;
+    font-size: 32px;
     flex-shrink: 0;
 }
 
@@ -217,21 +219,21 @@ html, body {
     text-align: left;
 }
 
-/* تكبير خط العناوين داخل المربعات */
+/* تكبير العنوان الرئيسي داخل المربعات */
 .card-title {
     font-family: 'Orbitron', 'Tajawal', sans-serif;
-    font-size: 15px;
+    font-size: 17px;
     font-weight: 900;
     color: #ffffff;
     letter-spacing: 1px;
 }
 
-/* تكبير الخط الفرعي داخل المربعات */
+/* تكبير النص الفرعي داخل المربعات */
 .card-subtitle {
-    font-size: 12px;
-    font-weight: 700;
+    font-size: 13.5px;
+    font-weight: 800;
     color: #e2e8f0;
-    margin-top: 2px;
+    margin-top: 3px;
 }
 
 /* =========================================================
@@ -241,20 +243,20 @@ html, body {
 .sub-actions {
     display: flex;
     justify-content: center;
-    gap: 10px;
+    gap: 12px;
     flex-wrap: wrap;
-    margin-top: 10px;
+    margin-top: 12px;
 }
 
 .btn-tool {
-    padding: 8px 16px;
+    padding: 10px 18px;
     font-family: 'Rajdhani', sans-serif;
-    font-size: 14px;
-    font-weight: 800;
+    font-size: 15px;
+    font-weight: 900;
     color: #ffffff;
     background: rgba(255, 255, 255, 0.1);
-    border: 1.5px solid var(--glass-border);
-    border-radius: 10px;
+    border: 2px solid var(--glass-border);
+    border-radius: 12px;
     cursor: pointer;
     text-decoration: none;
     transition: background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
@@ -263,29 +265,28 @@ html, body {
 .btn-tool:hover {
     background: var(--neon-blue);
     color: #040811;
-    font-weight: 900;
     border-color: var(--neon-blue);
-    box-shadow: 0 0 15px rgba(0, 210, 255, 0.8);
+    box-shadow: 0 0 18px rgba(0, 210, 255, 0.9);
 }
 
 .btn-social {
-    margin-top: 10px;
-    padding: 8px 24px;
+    margin-top: 12px;
+    padding: 10px 28px;
     font-family: 'Orbitron', sans-serif;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 900;
     color: #ffffff;
     background: linear-gradient(135deg, #0074e4, #00d2ff);
     border: none;
-    border-radius: 14px;
+    border-radius: 16px;
     cursor: pointer;
-    box-shadow: 0 0 15px rgba(0, 116, 228, 0.6);
+    box-shadow: 0 0 18px rgba(0, 116, 228, 0.7);
     transition: opacity 0.2s ease, box-shadow 0.2s ease;
 }
 
 .btn-social:hover {
     opacity: 0.9;
-    box-shadow: 0 0 22px rgba(0, 210, 255, 0.9);
+    box-shadow: 0 0 25px rgba(0, 210, 255, 0.95);
 }
 
 /* =========================================================
@@ -295,27 +296,27 @@ html, body {
 .legacy-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-    margin: 14px 0;
+    gap: 12px;
+    margin: 16px 0;
 }
 
 .btn-legacy {
-    padding: 10px;
+    padding: 12px;
     font-family: 'Orbitron', sans-serif;
-    font-size: 13px;
-    font-weight: 800;
+    font-size: 14.5px;
+    font-weight: 900;
     color: #ffffff;
-    background: rgba(14, 28, 54, 0.75);
-    border: 1.5px solid var(--glass-border);
-    border-radius: 10px;
+    background: rgba(14, 28, 54, 0.8);
+    border: 2px solid var(--glass-border);
+    border-radius: 12px;
     cursor: pointer;
     transition: border-color 0.2s ease, background 0.2s ease;
 }
 
 .btn-legacy:hover {
     border-color: var(--neon-cyan);
-    background: rgba(0, 255, 204, 0.25);
-    box-shadow: 0 0 12px rgba(0, 255, 204, 0.6);
+    background: rgba(0, 255, 204, 0.3);
+    box-shadow: 0 0 15px rgba(0, 255, 204, 0.7);
 }
 
 /* =========================================================
@@ -324,12 +325,12 @@ html, body {
 
 .footer-bar {
     text-align: center;
-    padding: 8px 16px;
-    font-size: 12.5px;
-    font-weight: 800;
+    padding: 10px 18px;
+    font-size: 13.5px;
+    font-weight: 900;
     color: #cbd5e1;
-    background: rgba(8, 16, 32, 0.65);
-    border-top: 1px solid rgba(0, 210, 255, 0.2);
+    background: rgba(8, 16, 32, 0.7);
+    border-top: 2px solid rgba(0, 210, 255, 0.2);
     width: 100%;
 }
 
@@ -350,11 +351,11 @@ html, body {
 @media (max-width: 850px) {
     .featured-grid { grid-template-columns: 1fr; }
     .legacy-grid { grid-template-columns: repeat(2, 1fr); }
-    #msgs { font-size: 14px; }
-    .header-bar { height: auto; padding: 8px 12px; flex-direction: column; gap: 6px; }
+    #msgs { font-size: 15px; }
+    .header-bar { height: auto; padding: 10px 14px; flex-direction: column; gap: 8px; }
 }
 
 @media (max-width: 500px) {
     .legacy-grid { grid-template-columns: 1fr; }
-    .glass-container { width: 95%; padding: 12px 10px; }
+    .glass-container { width: 95%; padding: 14px 12px; }
 }
