@@ -1,10 +1,13 @@
 CACHE MANIFEST
-# MR PS Offline Cache v1.0
+# MR PS Offline Cache v2.0 - branded friendly UI
 
 index.html
 run_lapse.html
 run_poops.html
-image.png
+mrps-run.css
+mrps-status.js
+../../img.jpg
+../../icon0.jpeg
 chain_lapse.js
 chain_poops.js
 core.js
