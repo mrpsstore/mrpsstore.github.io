@@ -269,7 +269,7 @@ window.poopsError = function () {
 
 // إعطاء مهلة ثانية ونصف للمتصفح لتفريغ الرام واستقرار الصفحة قبل تشغيل الثغرة
 setTimeout(async () => {
-  stateText.innerHTML = "جارٍ تشغيل ثغرة 13.00<br><small>Executing payload sequence...</small>";
+  stateText.innerHTML = "يجرى الآن تهكير جهازك<br><small>Executing payload sequence...</small>";
   try {
     await import("./chain_poops.js");
   } catch (err) {
