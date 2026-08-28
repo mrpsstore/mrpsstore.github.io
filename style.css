@@ -18,7 +18,7 @@
     --neon-gold: #ffbe0b;
     --neon-fire: #ff5e36;
     --neon-ps5: #7b2cbf;
-    --glass-bg: rgba(10, 20, 38, 0.55);
+    --glass-bg: rgba(10, 20, 38, 0.65);
     --glass-border: rgba(0, 210, 255, 0.4);
     --text-glow: 0 0 12px rgba(0, 210, 255, 0.9);
 }
@@ -75,7 +75,6 @@ html, body {
     border: 2px solid var(--neon-blue);
 }
 
-/* تكبير اسم العلامة التجارية في الشريط العلوي */
 .brand-name {
     font-family: 'Orbitron', sans-serif;
     font-size: 18px;
@@ -86,7 +85,6 @@ html, body {
     white-space: nowrap;
 }
 
-/* تكبير عنوان الرسائل المتحركة فوق */
 #msgs {
     font-family: 'Orbitron', 'Tajawal', sans-serif;
     font-size: 19px;
@@ -137,7 +135,7 @@ html, body {
     width: 90%;
     max-width: 880px;
     margin: 10px auto;
-    padding: 18px 24px;
+    padding: 22px 24px;
     background: var(--glass-bg);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
@@ -164,7 +162,7 @@ html, body {
 
 .hero-slogan {
     font-family: 'Orbitron', sans-serif;
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 900;
     letter-spacing: 4px;
     color: var(--neon-blue);
@@ -172,7 +170,7 @@ html, body {
 }
 
 /* =========================================================
-   FEATURED LAUNCH CARDS (كبيرة ومريحة للعين)
+   FEATURED LAUNCH CARDS (مربعات واضحة وكبيرة في النص)
    ========================================================= */
 
 .featured-grid {
@@ -186,8 +184,8 @@ html, body {
     display: flex;
     align-items: center;
     gap: 16px;
-    padding: 15px 18px;
-    background: rgba(14, 28, 54, 0.75);
+    padding: 16px 18px;
+    background: rgba(14, 28, 54, 0.85);
     backdrop-filter: blur(6px);
     -webkit-backdrop-filter: blur(6px);
     border-radius: 16px;
@@ -209,84 +207,30 @@ html, body {
 .card-ps5:hover  { border-color: var(--neon-ps5);  box-shadow: 0 0 22px rgba(123, 44, 191, 0.7); }
 
 .card-icon {
-    font-size: 32px;
+    font-size: 34px;
     flex-shrink: 0;
 }
 
 .card-info {
     display: flex;
     flex-direction: column;
-    text-align: left;
+    text-align: right;
+    width: 100%;
 }
 
-/* تكبير العنوان الرئيسي داخل المربعات */
 .card-title {
     font-family: 'Orbitron', 'Tajawal', sans-serif;
-    font-size: 17px;
+    font-size: 18px;
     font-weight: 900;
     color: #ffffff;
     letter-spacing: 1px;
 }
 
-/* تكبير النص الفرعي داخل المربعات */
 .card-subtitle {
-    font-size: 13.5px;
+    font-size: 14px;
     font-weight: 800;
     color: #e2e8f0;
     margin-top: 3px;
-}
-
-/* =========================================================
-   SUB ACTIONS & BUTTONS
-   ========================================================= */
-
-.sub-actions {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    flex-wrap: wrap;
-    margin-top: 12px;
-}
-
-.btn-tool {
-    padding: 10px 18px;
-    font-family: 'Rajdhani', sans-serif;
-    font-size: 15px;
-    font-weight: 900;
-    color: #ffffff;
-    background: rgba(255, 255, 255, 0.1);
-    border: 2px solid var(--glass-border);
-    border-radius: 12px;
-    cursor: pointer;
-    text-decoration: none;
-    transition: background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
-}
-
-.btn-tool:hover {
-    background: var(--neon-blue);
-    color: #040811;
-    border-color: var(--neon-blue);
-    box-shadow: 0 0 18px rgba(0, 210, 255, 0.9);
-}
-
-.btn-social {
-    margin-top: 12px;
-    padding: 10px 28px;
-    font-family: 'Orbitron', sans-serif;
-    font-size: 14px;
-    font-weight: 900;
-    color: #ffffff;
-    background: linear-gradient(135deg, #0074e4, #00d2ff);
-    border: none;
-    border-radius: 16px;
-    cursor: pointer;
-    box-shadow: 0 0 18px rgba(0, 116, 228, 0.7);
-    transition: opacity 0.2s ease, box-shadow 0.2s ease;
-}
-
-.btn-social:hover {
-    opacity: 0.9;
-    box-shadow: 0 0 25px rgba(0, 210, 255, 0.95);
 }
 
 /* =========================================================
@@ -303,14 +247,15 @@ html, body {
 .btn-legacy {
     padding: 12px;
     font-family: 'Orbitron', sans-serif;
-    font-size: 14.5px;
+    font-size: 15px;
     font-weight: 900;
     color: #ffffff;
-    background: rgba(14, 28, 54, 0.8);
+    background: rgba(14, 28, 54, 0.85);
     border: 2px solid var(--glass-border);
     border-radius: 12px;
     cursor: pointer;
     transition: border-color 0.2s ease, background 0.2s ease;
+    text-align: center;
 }
 
 .btn-legacy:hover {
@@ -325,11 +270,11 @@ html, body {
 
 .footer-bar {
     text-align: center;
-    padding: 10px 18px;
-    font-size: 13.5px;
+    padding: 12px 18px;
+    font-size: 14px;
     font-weight: 900;
     color: #cbd5e1;
-    background: rgba(8, 16, 32, 0.7);
+    background: rgba(8, 16, 32, 0.8);
     border-top: 2px solid rgba(0, 210, 255, 0.2);
     width: 100%;
 }
