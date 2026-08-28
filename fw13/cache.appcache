@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# MRPS FW13 offline cache v2
+# MRPS FW13 offline cache v3 - include UI assets
 
 CACHE:
 index.html
@@ -16,6 +16,11 @@ int64.js
 ps4_offsets.js
 rpc_worker.js
 payload.bin
+img.jpg
+icon0.png
+icon0.jpeg
+logo.png
+preview.png
 patches/1100.bin
 patches/1150.bin
 patches/1200.bin
