@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# build 2026_v3_full_offline
+# v2026_fixed_offline
 
 index.html
 run_lapse.html
@@ -13,13 +13,9 @@ ps4_offsets.js
 rpc_worker.js
 sysctl.html
 sysctl.js
-preview.png
 payload.bin
 icon0.jpg
-icon0.png
 img.jpg
-../img.jpg
-../icon0.jpg
 patches/1300.bin
 
 NETWORK:
