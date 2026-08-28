@@ -1,21 +1,16 @@
 CACHE MANIFEST
-# v2026_fixed_offline
+# v2026_clean_build_1300
 
-index.html
-run_lapse.html
 PS4_13.00_Webkit.html
-chain_lapse.js
 chain_poops.js
+chain_lapse.js
 core.js
-mem.js
 int64.js
+mem.js
 ps4_offsets.js
 rpc_worker.js
-sysctl.html
-sysctl.js
 payload.bin
 icon0.jpg
-img.jpg
 patches/1300.bin
 
 NETWORK:

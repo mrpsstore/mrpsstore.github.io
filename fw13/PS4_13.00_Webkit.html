@@ -6,8 +6,8 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 
 <title>MR PS STORE - FW 13.00 Exploit Host</title>
-<link rel="icon" type="image/jpeg" href="../icon0.jpg">
-<link rel="shortcut icon" href="../icon0.jpg">
+<link rel="icon" type="image/jpeg" href="icon0.jpg">
+<link rel="shortcut icon" href="icon0.jpg">
 
 <style>
 * {
@@ -18,7 +18,7 @@
 
 html, body {
   min-height: 100vh;
-  background-image: url('../img.jpg'), url('img.jpg');
+  background-image: url('img.jpg'), url('../img.jpg');
   background-position: center center;
   background-size: 100% 100%;
   background-repeat: no-repeat;
@@ -46,7 +46,7 @@ html, body {
   justify-content: space-between;
   align-items: center;
   padding: 10px 24px;
-  background: rgba(8, 16, 32, 0.55);
+  background: rgba(8, 16, 32, 0.65);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-radius: 18px;
@@ -100,7 +100,7 @@ html, body {
 }
 
 #header h1 {
-  font-size: 78px;
+  font-size: 75px;
   font-weight: 950;
   line-height: 0.95;
   letter-spacing: 5px;
@@ -108,7 +108,7 @@ html, body {
   background: linear-gradient(180deg, #ffffff 30%, #00d2ff 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 #state {
@@ -119,7 +119,7 @@ html, body {
   padding: 22px 28px;
   max-width: 880px;
   margin: 0 auto 20px;
-  background: rgba(10, 20, 38, 0.65);
+  background: rgba(10, 20, 38, 0.75);
   backdrop-filter: blur(14px);
   border-radius: 20px;
   border: 1.5px solid #00d2ff;
@@ -157,7 +157,7 @@ html, body {
 }
 
 #stateText {
-  font-size: 22px;
+  font-size: 21px;
   font-weight: 900;
   color: #ffffff;
   line-height: 1.4;
@@ -236,11 +236,11 @@ html, body {
       <div class="hud-content-center">
         <div id="loader" class="loader"></div>
         <div id="stateText">
-          جارٍ تهيئة الذاكرة...
-          <br><small>Stabilizing WebKit memory, please wait...</small>
+          جارٍ فحص الكاش وحفظ الملفات أوفلاين...
+          <br><small>Checking offline cache status...</small>
         </div>
       </div>
-      <div class="hud-right-badge">Memory Exploit</div>
+      <div id="statusBadge" class="hud-right-badge">Checking Cache</div>
     </div>
     <a href="../index.html" class="btn-back-home">⬅ الرجوع للصفحة الرئيسية</a>
   </div>
@@ -254,29 +254,73 @@ html, body {
 const loader = document.getElementById("loader");
 const state = document.getElementById("state");
 const stateText = document.getElementById("stateText");
+const statusBadge = document.getElementById("statusBadge");
+
+let isCaching = false;
+
+// متابعة تخزين الكاش أوفلاين خطوة بخطوة
+if (window.applicationCache) {
+  window.applicationCache.addEventListener('downloading', function () {
+    isCaching = true;
+    statusBadge.innerText = "Caching Files";
+    stateText.innerHTML = "جارٍ حفظ الملفات أوفلاين في الجهاز...<br><small>Downloading files for offline usage...</small>";
+  });
+
+  window.applicationCache.addEventListener('progress', function (e) {
+    isCaching = true;
+    let progress = Math.round((e.loaded / e.total) * 100);
+    stateText.innerHTML = `جارٍ حفظ الملفات أوفلاين (${progress}%)<br><small>Caching: ${e.loaded} of ${e.total} files</small>`;
+  });
+
+  window.applicationCache.addEventListener('cached', function () {
+    statusBadge.innerText = "Cached OK";
+    loader.classList.add("done");
+    stateText.innerHTML = "تم حفظ الهوست أوفلاين بنجاح! 💾<br><small>Cache Complete! You can now turn OFF internet and bookmark this page.</small>";
+    setTimeout(startExploit, 2000);
+  });
+
+  window.applicationCache.addEventListener('updateready', function () {
+    window.applicationCache.swapCache();
+    location.reload();
+  });
+
+  window.applicationCache.addEventListener('noupdate', function () {
+    startExploit();
+  });
+
+  window.applicationCache.addEventListener('error', function () {
+    // في حالة عدم وجود نت، يبدأ الثغرة مباشرة من الكاش المخزن
+    startExploit();
+  });
+} else {
+  startExploit();
+}
 
 window.poopsDone = function () {
   loader.classList.add("done");
-  state.classList.add("done");
-  stateText.innerHTML = "اكتملت العملية بنجاح<br><small>Done successfully! FW 13.00 Exploit Active.</small>";
+  statusBadge.innerText = "Success";
+  stateText.innerHTML = "تم تشغيل الثغرة بنجاح! ✅<br><small>FW 13.00 Exploit Active.</small>";
 };
 
 window.poopsError = function () {
   loader.classList.remove("done");
-  state.classList.add("error");
+  statusBadge.innerText = "Error";
   stateText.innerHTML = "حدث خطأ أثناء التنفيذ<br><small>Execution failed. Please reload page.</small>";
 };
 
-// إعطاء مهلة ثانية ونصف للمتصفح لتفريغ الرام واستقرار الصفحة قبل تشغيل الثغرة
-setTimeout(async () => {
-  stateText.innerHTML = "يجرى الآن تهكير جهازك<br><small>Executing payload sequence...</small>";
-  try {
-    await import("./chain_poops.js");
-  } catch (err) {
-    console.error(err);
-    window.poopsError();
-  }
-}, 1500);
+function startExploit() {
+  if (isCaching) return;
+  statusBadge.innerText = "Executing";
+  stateText.innerHTML = "يجرى الآن تهكير جهازك...<br><small>Executing payload sequence, please wait...</small>";
+  setTimeout(async () => {
+    try {
+      await import("./chain_poops.js");
+    } catch (err) {
+      console.error(err);
+      window.poopsError();
+    }
+  }, 1000);
+}
 </script>
 
 </body>
