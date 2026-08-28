@@ -99,7 +99,6 @@ html, body {
   padding: 5px 0;
 }
 
-/* تكبير العنوان الرئيسي ليكون ضخمًا وواضحًا */
 #header h1 {
   font-size: 78px;
   font-weight: 950;
@@ -112,7 +111,6 @@ html, body {
   margin-bottom: 10px;
 }
 
-/* توسيط المحتوى بالكامل داخل المربع أفقياً وعمودياً */
 #state {
   display: flex;
   flex-direction: column;
@@ -158,7 +156,6 @@ html, body {
   border: 4px solid #34d399;
 }
 
-/* جعل النص في منتصف المربع تماماً وبخط كبير جداً ومنظم */
 #stateText {
   font-size: 22px;
   font-weight: 900;
@@ -239,8 +236,8 @@ html, body {
       <div class="hud-content-center">
         <div id="loader" class="loader"></div>
         <div id="stateText">
-          يجرى الآن تهكير جهازك
-          <br><small>Executing payload sequence, please wait...</small>
+          جارٍ تهيئة الذاكرة...
+          <br><small>Stabilizing WebKit memory, please wait...</small>
         </div>
       </div>
       <div class="hud-right-badge">Memory Exploit</div>
@@ -253,9 +250,7 @@ html, body {
   </div>
 </div>
 
-<script type="module">
-import "./chain_poops.js";
-
+<script>
 const loader = document.getElementById("loader");
 const state = document.getElementById("state");
 const stateText = document.getElementById("stateText");
@@ -269,8 +264,19 @@ window.poopsDone = function () {
 window.poopsError = function () {
   loader.classList.remove("done");
   state.classList.add("error");
-  stateText.innerHTML = "حدث خطأ أثناء التنفيذ<br><small>Something went wrong... Re-try</small>";
+  stateText.innerHTML = "حدث خطأ أثناء التنفيذ<br><small>Execution failed. Please reload page.</small>";
 };
+
+// إعطاء مهلة ثانية ونصف للمتصفح لتفريغ الرام واستقرار الصفحة قبل تشغيل الثغرة
+setTimeout(async () => {
+  stateText.innerHTML = "جارٍ تشغيل ثغرة 13.00<br><small>Executing payload sequence...</small>";
+  try {
+    await import("./chain_poops.js");
+  } catch (err) {
+    console.error(err);
+    window.poopsError();
+  }
+}, 1500);
 </script>
 
 </body>
