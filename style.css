@@ -434,3 +434,38 @@ html, body {
     .btn-tool, .btn-social { min-height: 40px; padding: 8px 14px; font-size: 15px; }
     .footer-bar { padding: 8px 15px; font-size: 15px; }
 }
+
+/* MR SHERIF 13.52 Exclusive Card */
+.card-1352 {
+    position: relative;
+    border-color: #00f5ff !important;
+    box-shadow: 0 0 18px rgba(0,245,255,.45);
+    animation: exclusiveGlow 2s infinite alternate;
+}
+.card-1352:hover {
+    border-color: #ffd166 !important;
+    box-shadow: 0 0 28px rgba(255,209,102,.8);
+}
+.card-1352 .card-icon {
+    background: linear-gradient(135deg,#00f5ff,#7b2cff);
+}
+.exclusive-badge {
+    position:absolute;
+    top:8px;
+    right:10px;
+    font-size:11px;
+    padding:3px 8px;
+    border-radius:20px;
+    background:#ffd166;
+    color:#111;
+    font-weight:bold;
+}
+.ps5-center {
+    grid-column: 1 / span 2;
+    width: 50%;
+    justify-self: center;
+}
+@keyframes exclusiveGlow {
+    from { filter: drop-shadow(0 0 2px #00f5ff); }
+    to { filter: drop-shadow(0 0 10px #00f5ff); }
+}
