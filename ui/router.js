@@ -10,6 +10,7 @@
   else if(fw>=11.50&&fw<=12.02)engine="LAPSE";
   else if(fw>=12.50&&fw<=13)engine="POOPS";
   else if(fw>=13.02&&fw<=13.52)engine="13.02–13.52";
+  else if(fw===14)engine="14.00";
   state.setAttribute("dir","rtl");detail.setAttribute("dir","rtl");countdown.setAttribute("dir","rtl");
   if(!engine){state.textContent=match?"هذا الإصدار غير مدعوم":"افتح الصفحة من متصفح PS4";state.className="error";detail.textContent=match?"الإصدار المكتشف: "+match[1]:"لم يتم التعرف على جهاز PS4";countdown.textContent="يمكنك الرجوع إلى الصفحة الرئيسية.";return;}
   state.textContent="تم التعرف على إصدار "+match[1];state.className="ready";
